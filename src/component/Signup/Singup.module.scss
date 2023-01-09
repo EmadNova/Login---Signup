@@ -18,8 +18,12 @@
     }
 
     .form {
+      display: flex;
+      flex-direction: column;
 
       .info {
+        display: flex;
+        flex-direction: column;
 
         label {
           font-size: 16px;
@@ -29,7 +33,6 @@
 
         span {
           display: flex;
-          margin-top: 5px;
           font-size: 14px;
           font-weight: bold;
           justify-content: end;
@@ -37,17 +40,13 @@
         }
 
         .field {
-          outline: none;
-          border: 2px solid #edf2f4;
+          border: none;
           border-radius: 5px;
           font-size: 18px;
           font-weight: bold;
-          padding-left: 10px;
-          margin-top: 10px;
-          margin-bottom: 20px;
-          width: 100%;
+          padding: 0 10px;
           height: 40px;
-          transition: 0.2s ease;
+          margin: 5px 0 10px 0;
 
           &:focus {
             background-color: #edf2f4;
@@ -55,16 +54,13 @@
         }
 
         .redOne {
-          outline: none;
-          border: 2px solid #ef233c;
+          border: none;
           border-radius: 5px;
           font-size: 18px;
           font-weight: bold;
-          padding-left: 10px;
-          margin-top: 10px;
-          width: 100%;
+          padding: 0 10px;
           height: 40px;
-          transition: 0.2s ease;
+          margin: 5px 0 10px 0;
 
           &:focus {
             background-color: #edf2f4;
