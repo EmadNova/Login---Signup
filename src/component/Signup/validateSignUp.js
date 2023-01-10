@@ -1,4 +1,4 @@
-export const validate = (data) => {
+export const validateSignUp = (data) => {
 
     const error = {}
 

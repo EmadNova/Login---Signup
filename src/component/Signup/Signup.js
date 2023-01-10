@@ -1,16 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import { ToastContainer} from 'react-toastify';
+import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 //CSS
 import styles from "./Singup.module.scss"
 
 //COMPONENT
-import {validate} from "../validate"
+import {validateSignUp} from "./validateSignUp"
 import {notify} from "../toastify"
+import {Link} from "react-router-dom";
 
 const Signup = () => {
-
 
     const [data, setData] = useState({
         name: "",
@@ -24,7 +24,7 @@ const Signup = () => {
     const [focus, setFocus] = useState({});
 
     useEffect(() => {
-        setError(validate(data))
+        setError(validateSignUp(data, ))
     }, [data, focus])
 
     const changeHandler = (event) => {
@@ -33,10 +33,6 @@ const Signup = () => {
         } else {
             setData({...data, [event.target.name]: event.target.value})
         }
-    }
-
-    const focusHandler = (event) => {
-        setFocus({...focus, [event.target.name]: true})
     }
 
     const submitHandler = (event) => {
@@ -54,7 +50,6 @@ const Signup = () => {
             })
         }
     }
-    console.log(error.name)
 
     return (
         <div className={styles.fullCard}>
@@ -70,7 +65,6 @@ const Signup = () => {
                                name="name"
                                value={data.name}
                                onChange={changeHandler}
-                               onClick={focusHandler}
                         />
                         {error.name && focus.name && <span> {error.name} </span>}
                     </div>
@@ -83,7 +77,6 @@ const Signup = () => {
                                name="email"
                                value={data.email}
                                onChange={changeHandler}
-                               onClick={focusHandler}
                         />
                         {error.email && focus.email && <span> {error.email} </span>}
                     </div>
@@ -95,7 +88,6 @@ const Signup = () => {
                                name="password"
                                value={data.password}
                                onChange={changeHandler}
-                               onClick={focusHandler}
                         />
                         {error.password && focus.password && <span> {error.password} </span>}
                     </div>
@@ -107,7 +99,6 @@ const Signup = () => {
                                name="confirmPassword"
                                value={data.confirmPassword}
                                onChange={changeHandler}
-                               onClick={focusHandler}
                         />
                         {error.confirmPassword && focus.confirmPassword && <span> {error.confirmPassword} </span>}
                     </div>
@@ -117,7 +108,6 @@ const Signup = () => {
                                name="isAccepted"
                                value={data.isAccepted}
                                onChange={changeHandler}
-                               onClick={focusHandler}
                         />
                         <label htmlFor="check">I agree all statements in <a href="#">Terms of service</a></label>
                         <div>
@@ -126,9 +116,9 @@ const Signup = () => {
                     </div>
                     <div className={styles.submitBTN}>
                         <button type="submit">Register</button>
-                        <h5>Already have an account?</h5>
+                        <Link to="/Login" className={styles.router}>Already have an account?</Link>
                     </div>
-                    <ToastContainer />
+                    <ToastContainer/>
                 </form>
             </div>
         </div>
