@@ -126,6 +126,7 @@ const Signup = () => {
                     </div>
                     <div className={styles.submitBTN}>
                         <button type="submit">Register</button>
+                        <h5>Already have an account?</h5>
                     </div>
                     <ToastContainer />
                 </form>

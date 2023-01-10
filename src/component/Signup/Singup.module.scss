@@ -5,15 +5,15 @@
   height: 100vh;
 
   .container {
-    border: 1px solid #4A4E69;
+    border: 1px solid #111d4a;
     border-radius: 10px;
-    background-color: #8d99ae;
+    background-color: #111d4a;
     width: fit-content;
     height: fit-content;
     padding: 50px;
 
     h2 {
-      color: #000;
+      color: #fff8f0;
       margin-bottom: 40px;
     }
 
@@ -22,25 +22,29 @@
       flex-direction: column;
 
       .info {
+        margin-bottom: 20px;
         display: flex;
         flex-direction: column;
+        position: relative;
 
         label {
           font-size: 16px;
           font-weight: bold;
-          color: #000;
+          color: #fff8f0;
         }
 
         span {
-          display: flex;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          transform: translate(0, 50%);
           font-size: 14px;
           font-weight: bold;
-          justify-content: end;
-          color: #ef233c;
+          color: #e71d36;
         }
 
         .field {
-          border: none;
+          outline: none;
           border-radius: 5px;
           font-size: 18px;
           font-weight: bold;
@@ -50,11 +54,12 @@
 
           &:focus {
             background-color: #edf2f4;
+            outline: none;
           }
         }
 
         .redOne {
-          border: none;
+          border-color: #e71d36;
           border-radius: 5px;
           font-size: 18px;
           font-weight: bold;
@@ -64,6 +69,7 @@
 
           &:focus {
             background-color: #edf2f4;
+            outline: none;
           }
         }
 
@@ -74,20 +80,22 @@
 
       .check {
         margin-top: 20px;
+        position: relative;
 
         input {
           cursor: pointer;
         }
 
         label {
+          text-align: justify;
           margin-left: 10px;
-          color: #000;
+          color: #fff8f0;
           font-size: 16px;
           font-weight: bold;
           cursor: pointer;
 
           a {
-            color: #000;
+            color: #fff8f0;
             text-decoration: none;
             position: relative;
             padding-bottom: 2px;
@@ -96,7 +104,7 @@
               content: "";
               position: absolute;
               width: 100%;
-              background-color: #000;
+              background-color: #fff8f0;
               height: 1px;
               bottom: 0;
               left: 0;
@@ -105,12 +113,13 @@
         }
 
         span {
-          display: flex;
-          margin-top: 5px;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          transform: translate(0, 100%);
           font-size: 14px;
           font-weight: bold;
-          justify-content: end;
-          color: #ef233c;
+          color: #e71d36;
         }
       }
 
@@ -129,7 +138,22 @@
 
           &:hover {
             cursor: pointer;
-            background-color: #edf2f4;
+            background-color: #ffcf99;
+          }
+        }
+
+        h5 {
+          display: flex;
+          justify-content: center;
+          font-size: 14px;
+          font-weight: bold;
+          text-decoration: underline;
+          cursor: pointer;
+          margin-top: 15px;
+          color: #fff8f0;
+
+          &:hover {
+            color: #ffcf99;
           }
         }
       }
